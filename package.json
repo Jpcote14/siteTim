@@ -3,6 +3,7 @@
     "sass": "^1.83.4"
   },
   "scripts": {
-    "sass": "sass --watch ressources/scss:public/liaisons/css"
-   }
+    "sass": "sass --watch ressources/scss/styles.scss:public/css/styles.css"
+
+     }
 }

@@ -228,10 +228,28 @@ h3--desktop,
 
 /** Header **/
 nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Sora", sans-serif;
   width: 100%;
-  height: 120px;
   background-color: #121212;
   color: white;
+  padding: 12px;
+}
+
+.logo {
+  font-size: 36px;
+  color: White;
+  text-decoration: none;
+  padding: 12px 24px;
+  transition: all ease-in-out 300ms;
+}
+
+.logo:hover {
+  color: rgb(203, 30, 203);
 }
 
 .onglet {
@@ -239,6 +257,12 @@ nav {
   font-weight: 600;
   color: White;
   text-decoration: none;
+  padding: 12px 24px;
+  transition: all ease-in-out 300ms;
+}
+
+.onglet:hover {
+  color: rgb(203, 30, 203);
 }
 
 /****** MODULES ******/
@@ -246,6 +270,7 @@ nav {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Sora", sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map */

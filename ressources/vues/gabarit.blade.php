@@ -7,7 +7,8 @@
     <meta name="keywords" content="KEYWORDS">
     <meta name="author" content="AUTHOR">
     <!-- <link rel="icon" type="image/x-icon" href='images/favicon_32x32.png'> -->
-    <link rel="stylesheet" type="text/css" href="liaisons/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- <script defer src="scripts.js"></script> -->
     <title>Timcsf</title>
 </head>
@@ -15,12 +16,6 @@
 <body>
     <header>
         @include('fragments.header.header')
-
-        <br>
-        <a href="index.php?controleur=site&action=accueil">Le programme</a>
-        <a href="index.php?controleur=projets&action=index">Les Projets</a>
-        <a href="index.php?controleur=stages&action=index">Les stages</a>
-        <a href="index.php?controleur=messages&action=creer">Nous joindre</a>
     </header>
 
     <main>
