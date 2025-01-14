@@ -5,6 +5,6 @@
 @endsection
 
 @section('contenu')
-    <h1> Je suis la page projets... </h1>
+    <h1> Je suis la fiche projets... </h1>
     <p>{{$contenu}}</p>
 @endsection

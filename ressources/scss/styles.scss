@@ -32,7 +32,7 @@
 /****** Librairies ******/
 
 /** Normalize **/
-@import ''; // Adapter le lien vers votre fichier normalize dans node_module.
+// import '';  Adapter le lien vers votre fichier normalize dans node_module.
 
 /**** UTILITAIRES ****/
 
@@ -53,5 +53,14 @@
 /** Boutons **/
 @import 'base/bouton';
 
+/** Header **/
+@import 'header';
+
 /****** MODULES ******/
 
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}

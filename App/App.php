@@ -4,6 +4,10 @@ namespace App;
 
 
 use App\Controleurs\ControleurSite;
+use App\Controleurs\ControleurProjets;
+use App\Controleurs\ControleurStages;
+use App\Controleurs\ControleurMessages;
+
 use \PDO;
 use eftec\bladeone\BladeOne;
 
@@ -100,8 +104,35 @@ class App
                 case 'accueil':
                     $objControleur->accueil();
                     break;
-                case 'apropos':
-                    $objControleur->apropos();
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        }elseif($urlControleur === 'projets'){
+            $objControleur = new ControleurProjets();
+            switch ($urlAction) {
+                case 'index':
+                    $objControleur->index();
+                    break;
+                    case 'fiche':
+                        $objControleur->fiche();
+                        break;
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        } elseif ($urlControleur === 'stages') {
+            $objControleur = new ControleurStages();
+            switch ($urlAction) {
+                case 'index':
+                    $objControleur->index();
+                    break;
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        }elseif ($urlControleur === 'messages') {
+            $objControleur = new ControleurMessages();
+            switch ($urlAction) {
+                case 'creer':
+                    $objControleur->creer();
                     break;
                 default:
                     echo 'Erreur 404 - Action invalide';

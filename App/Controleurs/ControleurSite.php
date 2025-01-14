@@ -16,11 +16,5 @@ class ControleurSite
         $tDonnees = array("contenu"=>"Je suis le contenu de la page d'accueil...");
         echo App::getBlade()->run('pages.accueil',$tDonnees);
     }
-
-    public function apropos():void
-    {
-        $tDonnees = array("contenu"=>"Je suis le contenu de la page à propos...");
-        echo App::getBlade()->run('pages.apropos',$tDonnees);
-    }
 }
 
