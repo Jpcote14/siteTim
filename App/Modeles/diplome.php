@@ -28,7 +28,7 @@ class Diplome
         $chaineSQL = "SELECT * FROM diplomes WHERE id=:unIdDiplome";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdDiplome', $unIdDiplome, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Diplome');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Diplome');
         $requetePreparee->execute();
         $diplome = $requetePreparee->fetch();
         return $diplome;
@@ -38,7 +38,7 @@ class Diplome
     {
         $chaineSQL = 'SELECT * FROM diplomes';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Diplome');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Diplome');
         $requetePreparee->execute();
         $diplomes = $requetePreparee->fetchAll();
         return $diplomes;

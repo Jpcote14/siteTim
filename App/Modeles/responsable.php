@@ -23,7 +23,7 @@ class Responsable
         $chaineSQL = "SELECT * FROM responsables WHERE id=:unIdResponsable";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdResponsable', $unIdResponsable, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Responsable');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Responsable');
         $requetePreparee->execute();
         $responsable = $requetePreparee->fetch();
         return $responsable;
@@ -33,7 +33,7 @@ class Responsable
     {
         $chaineSQL = 'SELECT * FROM responsables';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Responsable');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Responsable');
         $requetePreparee->execute();
         $responsables = $requetePreparee->fetchAll();
         return $responsables;

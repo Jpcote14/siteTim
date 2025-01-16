@@ -19,7 +19,7 @@ class Cours
         $chaineSQL = "SELECT * FROM cours WHERE id=:unIdCours";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdCours', $unIdCours, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Cours');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Cours');
         $requetePreparee->execute();
         $unCours = $requetePreparee->fetch();
         return $unCours;
@@ -29,7 +29,7 @@ class Cours
     {
         $chaineSQL = 'SELECT * FROM cours';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Cours');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Cours');
         $requetePreparee->execute();
         $desCours = $requetePreparee->fetchAll();
         return $desCours;

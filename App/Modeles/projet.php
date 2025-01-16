@@ -24,7 +24,7 @@ class Projet
         $chaineSQL = "SELECT * FROM projets WHERE id=:unIdProjet";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdProjet', $unIdProjet, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Projet');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Projet');
         $requetePreparee->execute();
         $projet = $requetePreparee->fetch();
         return $projet;
@@ -34,7 +34,7 @@ class Projet
     {
         $chaineSQL = 'SELECT * FROM projets';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Projet');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Projet');
         $requetePreparee->execute();
         $projets = $requetePreparee->fetchAll();
         return $projets;

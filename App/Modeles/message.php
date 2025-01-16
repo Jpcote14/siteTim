@@ -26,7 +26,7 @@ class Message
         $chaineSQL = "SELECT * FROM messages WHERE id=:unIdMessage";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdMessage', $unIdMessage, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Message');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Message');
         $requetePreparee->execute();
         $message = $requetePreparee->fetch();
         return $message;
@@ -36,7 +36,7 @@ class Message
     {
         $chaineSQL = 'SELECT * FROM messages';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Message');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Message');
         $requetePreparee->execute();
         $messages = $requetePreparee->fetchAll();
         return $messages;

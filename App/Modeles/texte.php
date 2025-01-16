@@ -21,7 +21,7 @@ class Texte
         $chaineSQL = "SELECT * FROM textes WHERE id=:unIdTexte";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdTexte', $unIdTexte, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Texte');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Texte');
         $requetePreparee->execute();
         $texte = $requetePreparee->fetch();
         return $texte;
@@ -31,7 +31,7 @@ class Texte
     {
         $chaineSQL = 'SELECT * FROM textes';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Texte');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Texte');
         $requetePreparee->execute();
         $textes = $requetePreparee->fetchAll();
         return $textes;

@@ -19,7 +19,7 @@ class Axe
         $chaineSQL = "SELECT * FROM axes WHERE id=:unIdAxe";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdAxe', $unIdAxe, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Axe');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Axe');
         $requetePreparee->execute();
         $axe = $requetePreparee->fetch();
         return $axe;
@@ -29,7 +29,7 @@ class Axe
     {
         $chaineSQL = 'SELECT * FROM axes';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Axe');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Axe');
         $requetePreparee->execute();
         $axes = $requetePreparee->fetchAll();
         return $axes;

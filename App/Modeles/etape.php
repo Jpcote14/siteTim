@@ -22,7 +22,7 @@ class Etape
         $chaineSQL = "SELECT * FROM etapes WHERE id=:unIdEtape";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdEtape', $unIdEtape, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Etape');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Etape');
         $requetePreparee->execute();
         $etape = $requetePreparee->fetch();
         return $etape;
@@ -32,7 +32,7 @@ class Etape
     {
         $chaineSQL = 'SELECT * FROM etapes';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Etape');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Etape');
         $requetePreparee->execute();
         $etapes = $requetePreparee->fetchAll();
         return $etapes;

@@ -7,19 +7,16 @@ namespace App\Controleurs;
 use App\App;
 use App\Modeles\Message;
 
-class ControleurMessages{
-
-public function __construct(){
-
-}
-
-public function creer()
+class ControleurMessages
 {
-    $tMessages = [];
-    // $tMessages = Message::trouverTout();
-    $tDonnées = array("messages" => $tMessages);
-    echo App::getBlade()->run("pages.nousJoindre", $tDonnées);
-}
 
+    public function __construct() {}
 
+    public function creer()
+    {
+
+        $tMessages = Message::trouverTout();
+        $tDonnées = array("messages" => $tMessages);
+        echo App::getBlade()->run("pages.nousJoindre", $tDonnées);
+    }
 }

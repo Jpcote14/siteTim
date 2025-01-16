@@ -24,7 +24,7 @@ class Temoignage
         $chaineSQL = "SELECT * FROM temoignages WHERE id=:unIdTemoignage";
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam(':unIdTemoignage', $unIdTemoignage, PDO::PARAM_INT);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Temoignage');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Temoignage');
         $requetePreparee->execute();
         $temoignage = $requetePreparee->fetch();
         return $temoignage;
@@ -34,7 +34,7 @@ class Temoignage
     {
         $chaineSQL = 'SELECT * FROM temoignages';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Temoignage');
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modeles\Temoignage');
         $requetePreparee->execute();
         $temoignages = $requetePreparee->fetchAll();
         return $temoignages;
