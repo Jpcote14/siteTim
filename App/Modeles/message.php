@@ -9,15 +9,15 @@ use PDO;
 
 class Message
 {
-    private int $id;
-    private string $prenomNom;
-    private string $courriel;
-    private string $telephone;
-    private bool $consentement;
-    private string $sujet;
-    private string $contenu;
-    private \DateTime $dateheureCreation;
-    private int $responsableId;
+    private int $id = 0;
+    private string $prenomNom = "";
+    private string $courriel = "";
+    private string $telephone = "";
+    private bool $consentement = false;
+    private string $sujet = "";
+    private string $contenu = "";
+    // private \DateTime $dateheureCreation;
+    private int $responsableId = 0;
 
     public function __construct() {}
 
@@ -112,15 +112,15 @@ class Message
         $this->contenu = $contenu;
     }
 
-    public function getDateheureCreation(): \DateTime
-    {
-        return $this->dateheureCreation;
-    }
+    // public function getDateheureCreation(): \DateTime
+    // {
+    //     return $this->dateheureCreation;
+    // }
 
-    public function setDateheureCreation(\DateTime $dateheureCreation): void
-    {
-        $this->dateheureCreation = $dateheureCreation;
-    }
+    // public function setDateheureCreation(\DateTime $dateheureCreation): void
+    // {
+    //     $this->dateheureCreation = $dateheureCreation;
+    // }
 
     public function getResponsableId(): int
     {
