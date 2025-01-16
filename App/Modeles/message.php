@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class Message
 {
@@ -14,6 +18,29 @@ class Message
     private string $contenu;
     private \DateTime $dateheureCreation;
     private int $responsableId;
+
+    public function __construct() {}
+
+    public static function trouverParId($unIdMessage): Message
+    {
+        $chaineSQL = "SELECT * FROM messages WHERE id=:unIdMessage";
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam(':unIdMessage', $unIdMessage, PDO::PARAM_INT);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Message');
+        $requetePreparee->execute();
+        $message = $requetePreparee->fetch();
+        return $message;
+    }
+
+    public static function trouverTout(): array
+    {
+        $chaineSQL = 'SELECT * FROM messages';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Message');
+        $requetePreparee->execute();
+        $messages = $requetePreparee->fetchAll();
+        return $messages;
+    }
 
     public function getId(): int
     {

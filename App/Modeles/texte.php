@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class Texte
 {
@@ -9,6 +13,8 @@ class Texte
     private string $titre;
     private string $texte;
     private string $epic;
+
+    public function __construct() {}
 
     public function getId(): int
     {

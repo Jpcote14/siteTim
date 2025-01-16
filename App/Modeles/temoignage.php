@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class Temoignage
 {
@@ -12,6 +16,8 @@ class Temoignage
     private string $urlEntreprise;
     private string $temoignage;
     private int $anneeDiplomation;
+
+    public function __construct() {}
 
     public function getId(): int
     {

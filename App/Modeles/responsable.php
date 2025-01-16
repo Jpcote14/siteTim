@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class Responsable
 {
@@ -11,6 +15,30 @@ class Responsable
     private string $prenom;
     private string $nom;
     private string $telephone;
+
+    public function __construct() {}
+
+    public static function trouverParId($unIdResponsable): Responsable
+    {
+        $chaineSQL = "SELECT * FROM responsables WHERE id=:unIdResponsable";
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam(':unIdResponsable', $unIdResponsable, PDO::PARAM_INT);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Responsable');
+        $requetePreparee->execute();
+        $responsable = $requetePreparee->fetch();
+        return $responsable;
+    }
+
+    public static function trouverTout(): array
+    {
+        $chaineSQL = 'SELECT * FROM responsables';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Responsable');
+        $requetePreparee->execute();
+        $responsables = $requetePreparee->fetchAll();
+        return $responsables;
+    }
+
 
     public function getId(): int
     {

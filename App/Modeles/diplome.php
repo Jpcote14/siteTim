@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class Diplome
 {
@@ -17,7 +21,30 @@ class Diplome
     private string $linkedin;
     private string $siteWeb;
 
-  
+    public function __construct() {}
+
+    public static function trouverParId($unIdDiplome): Diplome
+    {
+        $chaineSQL = "SELECT * FROM diplomes WHERE id=:unIdDiplome";
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam(':unIdDiplome', $unIdDiplome, PDO::PARAM_INT);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Diplome');
+        $requetePreparee->execute();
+        $diplome = $requetePreparee->fetch();
+        return $diplome;
+    }
+
+    public static function trouverTout(): array
+    {
+        $chaineSQL = 'SELECT * FROM diplomes';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Diplome');
+        $requetePreparee->execute();
+        $diplomes = $requetePreparee->fetchAll();
+        return $diplomes;
+    }
+
+
     public function getId(): int
     {
         return $this->id;
@@ -29,67 +56,67 @@ class Diplome
         $this->id = $id;
     }
 
-  
+
     public function getNom(): string
     {
         return $this->nom;
     }
 
-   
+
     public function setNom(string $nom): void
     {
         $this->nom = $nom;
     }
 
-  
+
     public function getPrenom(): string
     {
         return $this->prenom;
     }
 
-  
+
     public function setPrenom(string $prenom): void
     {
         $this->prenom = $prenom;
     }
 
-  
+
     public function getPresentation(): string
     {
         return $this->presentation;
     }
 
-  
+
     public function setPresentation(string $presentation): void
     {
         $this->presentation = $presentation;
     }
 
-  
+
     public function getInteretConception(): bool
     {
         return $this->interetConception;
     }
 
-   
+
     public function setInteretConception(bool $interetConception): void
     {
         $this->interetConception = $interetConception;
     }
 
-    
+
     public function getInteretMedias(): bool
     {
         return $this->interetMedias;
     }
 
-   
+
     public function setInteretMedias(bool $interetMedias): void
     {
         $this->interetMedias = $interetMedias;
     }
 
-  
+
     public function getInteretIntegration(): bool
     {
         return $this->interetIntegration;
@@ -100,49 +127,49 @@ class Diplome
         $this->interetIntegration = $interetIntegration;
     }
 
-    
+
     public function getInteretProgrammation(): bool
     {
         return $this->interetProgrammation;
     }
 
-  
+
     public function setInteretProgrammation(bool $interetProgrammation): void
     {
         $this->interetProgrammation = $interetProgrammation;
     }
 
-    
+
     public function getCourriel(): string
     {
         return $this->courriel;
     }
 
-    
+
     public function setCourriel(string $courriel): void
     {
         $this->courriel = $courriel;
     }
 
-   
+
     public function getLinkedin(): string
     {
         return $this->linkedin;
     }
 
-   
+
     public function setLinkedin(string $linkedin): void
     {
         $this->linkedin = $linkedin;
     }
 
-    
+
     public function getSiteWeb(): string
     {
         return $this->siteWeb;
     }
 
-    
+
     public function setSiteWeb(string $siteWeb): void
     {
         $this->siteWeb = $siteWeb;

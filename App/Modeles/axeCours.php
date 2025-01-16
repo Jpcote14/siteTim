@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class AxeCours
 {
@@ -9,7 +13,8 @@ class AxeCours
     private int $axeId;
     private int $coursId;
 
-   
+    public function __construct() {}
+
     public function getId(): int
     {
         return $this->id;
@@ -20,7 +25,7 @@ class AxeCours
         $this->id = $id;
     }
 
-  
+
     public function getAxeId(): int
     {
         return $this->axeId;

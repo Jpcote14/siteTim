@@ -1,7 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 namespace App\Modeles;
+
+use App\App;
+use PDO;
 
 class Projet
 {
@@ -12,6 +16,29 @@ class Projet
     private string $url;
     private int $diplomeId;
     private int $coursId;
+
+    public function __construct() {}
+
+    public static function trouverParId($unIdProjet): Projet
+    {
+        $chaineSQL = "SELECT * FROM projets WHERE id=:unIdProjet";
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam(':unIdProjet', $unIdProjet, PDO::PARAM_INT);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Projet');
+        $requetePreparee->execute();
+        $projet = $requetePreparee->fetch();
+        return $projet;
+    }
+
+    public static function trouverTout(): array
+    {
+        $chaineSQL = 'SELECT * FROM projets';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Projet');
+        $requetePreparee->execute();
+        $projets = $requetePreparee->fetchAll();
+        return $projets;
+    }
 
     public function getId(): int
     {
