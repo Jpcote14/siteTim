@@ -16,6 +16,27 @@ class Texte
 
     public function __construct() {}
 
+    public static function trouverParId($unIdTexte): Texte
+    {
+        $chaineSQL = "SELECT * FROM textes WHERE id=:unIdTexte";
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam(':unIdTexte', $unIdTexte, PDO::PARAM_INT);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Texte');
+        $requetePreparee->execute();
+        $texte = $requetePreparee->fetch();
+        return $texte;
+    }
+
+    public static function trouverTout(): array
+    {
+        $chaineSQL = 'SELECT * FROM textes';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Texte');
+        $requetePreparee->execute();
+        $textes = $requetePreparee->fetchAll();
+        return $textes;
+    }
+
     public function getId(): int
     {
         return $this->id;

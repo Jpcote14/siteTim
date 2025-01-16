@@ -19,6 +19,27 @@ class Temoignage
 
     public function __construct() {}
 
+    public static function trouverParId($unIdTemoignage): Temoignage
+    {
+        $chaineSQL = "SELECT * FROM temoignages WHERE id=:unIdTemoignage";
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam(':unIdTemoignage', $unIdTemoignage, PDO::PARAM_INT);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Temoignage');
+        $requetePreparee->execute();
+        $temoignage = $requetePreparee->fetch();
+        return $temoignage;
+    }
+
+    public static function trouverTout(): array
+    {
+        $chaineSQL = 'SELECT * FROM temoignages';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, 'App\Modele\Temoignage');
+        $requetePreparee->execute();
+        $temoignages = $requetePreparee->fetchAll();
+        return $temoignages;
+    }
+
     public function getId(): int
     {
         return $this->id;

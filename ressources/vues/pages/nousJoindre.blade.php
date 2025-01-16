@@ -6,6 +6,6 @@
 
 @section('contenu')
     <h1> Je suis la page nous joindre... </h1>
-    <p>{{$contenu}}</p>
+    
 @endsection
 
