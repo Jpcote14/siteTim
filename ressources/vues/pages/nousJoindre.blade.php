@@ -9,7 +9,7 @@
     @if($messages && count($messages) > 0)
         <ul>
             @foreach($messages as $message)
-                <li>{{ $message->getCourriel() }}</li>
+                <li>{{ $message->getTelephone() }}</li>
             @endforeach
         </ul>
     @else

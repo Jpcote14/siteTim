@@ -6,5 +6,14 @@
 
 @section('contenu')
     <h1> Je suis l'index projets... </h1>
-    <a href="index.php?controleur=projets&action=fiche">Fiche d'un projet</a>
+  
+    <ul>
+        @foreach ($projets as $projet)
+    
+        <li><a href="index.php?controleur=projets&action=fiche&">{{ $projet->getId() }} - {{ $projet->getTitre() }}</a></li>
+        <br>
+            
+        @endforeach
+    </ul>
+   
 @endsection

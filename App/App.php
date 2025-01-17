@@ -24,7 +24,8 @@ class App
     public function __construct()
     {
         // Configuration initiale
-        error_reporting(E_ALL | E_STRICT);
+        error_reporting(E_ALL & ~E_DEPRECATED); // Affiche toutes les erreurs sauf les "Deprecated"
+        ini_set('display_errors', '1');         // Active l'affichage des erreurs
         date_default_timezone_set('America/Montreal');
 
         // Routage de la requête URL

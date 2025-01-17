@@ -14,8 +14,7 @@ class ControleurProjets
 
     public function index()
     {
-        $tProjets = [];
-        // $tProjets = Projet::trouverTout();
+        $tProjets = Projet::trouverTout();
         $tDonnées = array("projets" => $tProjets);
         echo App::getBlade()->run("pages.projets.indexProjets", $tDonnées);
     }

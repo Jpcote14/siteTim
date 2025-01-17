@@ -9,13 +9,13 @@ use PDO;
 
 class Projet
 {
-    private int $id;
-    private string $titre;
-    private string $technologies;
-    private string $description;
-    private string $url;
-    private int $diplomeId;
-    private int $coursId;
+    private int $id = 0;
+    private string $titre = '';
+    private string $technologies = '';
+    private string $description = '';
+    private string $url = '';
+    private int $diplomeId = 0;
+    private int $coursId = 0;
 
     public function __construct() {}
 
