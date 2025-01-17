@@ -21,10 +21,9 @@ class ControleurProjets
 
     public function fiche()
     {
-        // $unIdProjet = intval($_GET['id']);
-        // $projets = Projet::trouverParId($unIdProjet);
-        $projets = [];
-        $tDonnées = array("projet" => $projets);
+        $unIdProjet = intval($_GET['idProjet']);
+        $projet = Projet::trouverParId($unIdProjet);
+        $tDonnées = array("projet" => $projet);
         echo App::getBlade()->run("pages.projets.ficheProjets", $tDonnées);
     }
 }

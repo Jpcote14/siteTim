@@ -10,7 +10,7 @@
     <ul>
         @foreach ($projets as $projet)
     
-        <li><a href="index.php?controleur=projets&action=fiche&">{{ $projet->getId() }} - {{ $projet->getTitre() }}</a></li>
+        <li><a href="index.php?controleur=projets&action=fiche&idProjet={{$projet->getId()}}">{{ $projet->getId() }} - {{ $projet->getTitre() }}</a></li>
         <br>
             
         @endforeach
