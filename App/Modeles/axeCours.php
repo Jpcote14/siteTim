@@ -10,8 +10,8 @@ use PDO;
 class AxeCours
 {
     private int $id;
-    private int $axeId;
-    private int $coursId;
+    private int $axe_id;
+    private int $cours_id;
 
     public function __construct() {}
 

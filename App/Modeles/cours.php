@@ -9,10 +9,10 @@ use PDO;
 
 class Cours
 {
-    private int $id;
-    private string $nom;
-    private string $session;
-    private int $annee;
+    private int $id = 0;
+    private string $nom = "";
+    private int $session = 0;
+    private int $annee = 0;
 
     public static function trouverParId($unIdCours): Cours
     {
@@ -61,7 +61,7 @@ class Cours
     }
 
 
-    public function getSession(): string
+    public function getSession(): int
     {
         return $this->session;
     }

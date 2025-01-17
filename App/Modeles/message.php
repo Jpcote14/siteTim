@@ -17,7 +17,7 @@ class Message
     private string $sujet = "";
     private string $contenu = "";
     // private \DateTime $dateheureCreation;
-    private int $responsableId = 0;
+    private int $responsable_id = 0;
 
     public function __construct() {}
 

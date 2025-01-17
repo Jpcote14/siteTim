@@ -13,7 +13,7 @@ class Etape
     private string $nom;
     private int $ordre;
     private string $description;
-    private int $projetId;
+    private int $projet_id;
 
     public function __construct() {}
 

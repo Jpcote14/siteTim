@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Modeles;
 
 use App\App;
+use App\Modeles\Cours;
+use App\Modeles\Diplome;
 use PDO;
 
 class Projet
@@ -14,8 +16,8 @@ class Projet
     private string $technologies = '';
     private string $description = '';
     private string $url = '';
-    private int $diplomeId = 0;
-    private int $coursId = 0;
+    private int $diplome_id = 0;
+    private int $cours_id = 0;
 
     public function __construct() {}
 
@@ -39,6 +41,19 @@ class Projet
         $projets = $requetePreparee->fetchAll();
         return $projets;
     }
+
+    public function getCoursAssociee(): Cours
+    {
+        $resultat = Cours::trouverParId($this->cours_id);
+        return $resultat;
+    }
+
+    public function getDiplomeAssociee(): Diplome
+    {
+        $resultat = Diplome::trouverParId($this->diplome_id);
+        return $resultat;
+    }
+
 
     public function getId(): int
     {
