@@ -6,6 +6,7 @@ namespace App\Controleurs;
 
 use App\App;
 use App\Modeles\Message;
+use App\Modeles\Responsable;
 
 class ControleurMessages
 {
@@ -14,9 +15,12 @@ class ControleurMessages
 
     public function creer()
     {
-
+        $tResponsable = Responsable::trouverTout();
         $tMessages = Message::trouverTout();
-        $tDonnées = array("messages" => $tMessages);
+        $tDonnées = array(
+            "messages" => $tMessages,
+            "responsables" => $tResponsable
+        );
         echo App::getBlade()->run("pages.nousJoindre", $tDonnées);
     }
 }

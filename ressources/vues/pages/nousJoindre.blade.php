@@ -3,17 +3,52 @@
 @section('title')
     Nous joindre
 @endsection
-
+{{-- <div>{{ $message->getTelephone() }}</div> --}}
 @section('contenu')
-    <h1>Je suis la page nous joindre...</h1>
-    @if($messages && count($messages) > 0)
-        <ul>
-            @foreach($messages as $message)
-                <li>{{ $message->getTelephone() }}</li>
+    <h1>Nous joindre</h1>
+        
+            @foreach($responsables as $responsable)
+                <div>
+{{-- ajouter une image de chaque prof --}}
+                    {{-- <img src="" alt=""> --}}
+<p>{{$responsable->getPrenom()}} {{$responsable->getNom()}}</p>
+<p>{{$responsable->getResponsabilite()}}</p>
+<p>{{$responsable->getTelephone()}}</p>
+
+                </div>
+
+                <br>
             @endforeach
-        </ul>
-    @else
-        <p>Aucun message trouvé.</p>
-    @endif
+        
+        
+
+{{-- Ajouter une action pour faire fonctionner le formulaire --}}
+<form action="#" method="post">
+
+    <div class="ctn-input">
+    <label class="" for="joindrePrenom">Prénom</label>
+    <input
+        type="text"
+        id="joindrePrenom"
+        name=""
+        placeholder=""
+        aria-labelledby=""
+        aria-required="true"
+        aria-invalid="false"
+        aria-describedby=""
+        value=""
+        class="input" />
+</div>
+
+
+
+
+
+
+</form>
+
+
+
+
 @endsection
 
