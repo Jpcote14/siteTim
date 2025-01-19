@@ -25,7 +25,9 @@
 {{-- Ajouter une action pour faire fonctionner le formulaire --}}
 <form action="#" method="post">
 
-    <div class="ctn-input">
+<h2>Contacte par téléphone</h2>
+
+<div class="ctn-input">
     <label class="" for="joindrePrenom">Prénom</label>
     <input
         type="text"
@@ -40,7 +42,20 @@
         class="input" />
 </div>
 
-
+<div class="ctn-input">
+    <label class="" for="joindreNom">Nom</label>
+    <input
+        type="text"
+        id="joindreNom"
+        name=""
+        placeholder=""
+        aria-labelledby=""
+        aria-required="true"
+        aria-invalid="false"
+        aria-describedby=""
+        value=""
+        class="input" />
+</div>
 
 
 
