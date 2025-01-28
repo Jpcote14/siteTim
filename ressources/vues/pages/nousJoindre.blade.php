@@ -19,6 +19,54 @@ Nous joindre
 
 <br>
 @endforeach
+@foreach($responsables as $responsable)
+<div>
+    {{-- ajouter une image de chaque prof --}}
+    {{-- <img src="" alt=""> --}}
+    <p>{{$responsable->getPrenom()}} {{$responsable->getNom()}}</p>
+    <p>{{$responsable->getResponsabilite()}}</p>
+    <p>{{$responsable->getTelephone()}}</p>
+
+</div>
+
+<br>
+@endforeach
+@foreach($responsables as $responsable)
+<div>
+    {{-- ajouter une image de chaque prof --}}
+    {{-- <img src="" alt=""> --}}
+    <p>{{$responsable->getPrenom()}} {{$responsable->getNom()}}</p>
+    <p>{{$responsable->getResponsabilite()}}</p>
+    <p>{{$responsable->getTelephone()}}</p>
+
+</div>
+
+<br>
+@endforeach
+@foreach($responsables as $responsable)
+<div>
+    {{-- ajouter une image de chaque prof --}}
+    {{-- <img src="" alt=""> --}}
+    <p>{{$responsable->getPrenom()}} {{$responsable->getNom()}}</p>
+    <p>{{$responsable->getResponsabilite()}}</p>
+    <p>{{$responsable->getTelephone()}}</p>
+
+</div>
+
+<br>
+@endforeach
+@foreach($responsables as $responsable)
+<div>
+    {{-- ajouter une image de chaque prof --}}
+    {{-- <img src="" alt=""> --}}
+    <p>{{$responsable->getPrenom()}} {{$responsable->getNom()}}</p>
+    <p>{{$responsable->getResponsabilite()}}</p>
+    <p>{{$responsable->getTelephone()}}</p>
+
+</div>
+
+<br>
+@endforeach
 
 
 <div class="div-gradient">test</div>
@@ -56,7 +104,6 @@ Nous joindre
             value=""
             class="input" />
     </div>
-
 
 
 

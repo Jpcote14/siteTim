@@ -1,34 +1,31 @@
-<nav class="nav-mobile" role="navigation">
- <!-- Ajouter logo -->
+<header class="main-header">
+ <nav class="nav-mobile" role="navigation">
+ <!-- Mobile navigation -->
  <a href="index.php?controleur=site&action=accueil" class="logo">TIM</a>
 
  <div id="menuToggle">
-
  <input type="checkbox" id="menuCheckbox" />
-
  <span></span>
  <span></span>
  <span></span>
-
  <ul id="menu">
- <li class=""><a class="onglet" href="index.php?controleur=site&action=accueil">Le programme</a></li>
- <li class=""><a class="onglet" href="index.php?controleur=projets&action=index">Les Projets</a></li>
- <li class=""><a class="onglet" href="index.php?controleur=stages&action=index">Les stages</a></li>
- <li class=""><a class="onglet" href="index.php?controleur=messages&action=creer">Nous joindre</a></li>
+ <li><a class="onglet" href="index.php?controleur=site&action=accueil">Le programme</a></li>
+ <li><a class="onglet" href="index.php?controleur=projets&action=index">Les Projets</a></li>
+ <li><a class="onglet" href="index.php?controleur=stages&action=index">Les stages</a></li>
+ <li><a class="onglet" href="index.php?controleur=messages&action=creer">Nous joindre</a></li>
  </ul>
  </div>
-</nav>
+ </nav>
 
-<nav class="nav-desktop" role="navigation">
- <!-- Ajouter logo -->
+ <nav class="nav-desktop" role="navigation">
+ <!-- Desktop navigation -->
  <a href="index.php?controleur=site&action=accueil" class="logo">TIM</a>
-
- <div id="" class="ctn-onglet">
+ <div class="ctn-onglet">
  <a class="onglet" href="index.php?controleur=site&action=accueil">Le programme</a>
  <a class="onglet" href="index.php?controleur=projets&action=index">Les Projets</a>
  <a class="onglet" href="index.php?controleur=stages&action=index">Les stages</a>
  <a class="onglet" href="index.php?controleur=messages&action=creer">Nous joindre</a>
  </div>
-
  <button class="btn">S'inscrire</button>
-</nav>
+ </nav>
+</header>

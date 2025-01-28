@@ -30,8 +30,15 @@
 /****** BASE ******/
 /** Typographie **/
 /** Hyperliens **/
-/** Boutons **/
 /** Header **/
+.main-header {
+  position: sticky; /* Garde le header visible en haut */
+  top: 0; /* S'applique au viewport */
+  z-index: 100; /* Assure la superposition au contenu */
+  background-color: transparent; /* Couleur de fond */
+  transition: background-color 0.3s ease; /* Transition pour effet de scroll */
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -40,8 +47,10 @@ nav {
   align-items: center;
   font-family: "Sora", sans-serif;
   width: 100%;
-  background-color: #121212;
   color: white;
+}
+nav.scrolled {
+  background-color: #131313;
 }
 
 .nav-desktop {
@@ -62,7 +71,7 @@ nav {
 }
 
 .logo:hover {
-  color: rgb(203, 30, 203);
+  color: #C67AFF;
 }
 
 .onglet {
@@ -76,7 +85,7 @@ nav {
 }
 
 .onglet:hover {
-  color: rgb(203, 30, 203);
+  color: #C67AFF;
 }
 
 .ctn-onglet {
@@ -220,12 +229,13 @@ body {
   padding: 12px 24px;
   font-size: 16px;
   color: #d0d0d0;
-  background-color: #1a1a1a;
+  background-color: transparent;
   border: none;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
   z-index: 1;
+  transition: color 200ms ease-in-out;
   overflow: hidden;
 }
 .btn:before {
@@ -240,6 +250,9 @@ body {
   mask-composite: exclude;
   z-index: -1;
 }
+.btn:hover {
+  color: #C67AFF;
+}
 
 .div-gradient {
   width: 200px;
@@ -247,19 +260,16 @@ body {
   position: relative;
   background: transparent;
   border-radius: 12px;
-  border: none;
+  border: 4px solid transparent;
   overflow: hidden;
 }
 .div-gradient::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   border-radius: inherit;
   background: conic-gradient(from 180deg at 50% 50%, #89F9E8, #FACB7B, #D87CEE, #9099FC, #89F9E8);
-  padding: 1px;
+  padding: 4px;
   z-index: -1;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;

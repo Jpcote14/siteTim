@@ -33,10 +33,10 @@
 /**** UTILITAIRES ****/
 
 /** Variables **/
-// import 'utilitaires/variables';
+@import 'utilitaires/variables';
 
 /** Mixins **/
-// import 'utilitaires/mixins';
+@import 'utilitaires/mixins';
 
 /****** BASE ******/
 
@@ -46,15 +46,11 @@
 /** Hyperliens **/
 // import 'base/hyperlien';
 
-/** Boutons **/
-//import 'base/bouton';
 
 /** Header **/
  @import 'header';
 
 /****** MODULES ******/
-$texte-blanc: #CAC6DD;
-
 
 *{
     margin:0;
@@ -67,75 +63,49 @@ body{
     background: linear-gradient(166deg, #0E0C15 10%, #251030 96.5%);
 }
 
-$gradient: linear-gradient(90deg, #89F9E8, #FACB7B, #D87CEE, #9099FC);
-
-// Déclaration de la variable pour le gradient conique
-$multicolor: conic-gradient(
-  from 180deg at 50% 50%, 
-  #89F9E8, 
-  #FACB7B, 
-  #D87CEE, 
-  #9099FC, 
-  #89F9E8
-);
 
 .btn {
-  position: relative;
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  color: #d0d0d0; // Couleur du texte
-  background-color: #1a1a1a; // Fond intérieur du bouton
-  border: none; // Pas besoin de bordure CSS ici
-  border-radius: 12px;
-  text-align: center;
-  cursor: pointer;
-  z-index: 1;
-  overflow: hidden; // Assure que le pseudo-élément reste dans les limites
-
-  &:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 2px; // Épaisseur de la bordure
-    background: $multicolor; // Utilisation de la variable pour le gradient conique
-    border-radius: inherit; // Applique le même border-radius que le bouton
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0); // Crée un masque
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    z-index: -1;
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #d0d0d0; // Couleur du texte
+    background-color: transparent; // Fond transparent
+    border: none; // Pas besoin de bordure CSS ici
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1; 
+     transition: color 200ms ease-in-out;
+    overflow: hidden; // Assure que le pseudo-élément reste dans les limites
+  
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2px; // Épaisseur de la bordure
+      background: $multicolor; // Utilisation de la variable pour le gradient conique
+      border-radius: inherit; // Applique le même border-radius que le bouton
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); // Crée un masque
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+  
+    // Optionnel : ajouter un effet hover si nécessaire
+    &:hover {
+      color: $libelle-bouton-survol; // Change la couleur du texte
+    }
   }
-}
+  
 
 
 .div-gradient {
     width: 200px;
     height: 200px;
-    position: relative;
-    background: transparent; // Fond transparent
-    border-radius: 12px;
-    border: none; // Bord transparent pour laisser place au pseudo-élément
-    overflow: hidden; // Masque le contenu qui dépasse
-  
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: inherit; // Applique le même border-radius que la div
-      background: $multicolor; // Applique le gradient multicolore au pseudo-élément
-      padding: 1px; // Ajuste l'épaisseur du border
-      z-index: -1; // Le pseudo-élément doit être derrière la div
-  
-      // Application du masque pour exclure l'intérieur et garder la bordure
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: destination-out;
-      mask-composite: exclude;
-    }
+    @include gradient-border(4px, 12px); // Tu peux ajuster la largeur et le border-radius ici
   }
 
 

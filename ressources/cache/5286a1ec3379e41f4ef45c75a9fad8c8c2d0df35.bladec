@@ -9,14 +9,12 @@
  <!-- <link rel="icon" type="image/x-icon" href='images/favicon_32x32.png'> -->
  <link rel="stylesheet" type="text/css" href="css/styles.css">
  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
- <!-- <script defer src="scripts.js"></script> -->
+ <script defer src="scripts/header.js"></script>
  <title>Timcsf</title>
 </head>
 
 <body>
- <header>
  <?php echo $this->runChild('fragments.header.header'); ?>
- </header>
 
  <main>
  <?php echo $this->yieldContent('contenu'); ?>

@@ -1,3 +1,11 @@
+.main-header {
+  position: sticky; /* Garde le header visible en haut */
+  top: 0; /* S'applique au viewport */
+  z-index: 100; /* Assure la superposition au contenu */
+  background-color: transparent; /* Couleur de fond */
+  transition: background-color 0.3s ease; /* Transition pour effet de scroll */
+ }
+
 nav{
     display: flex;
     flex-direction: row;
@@ -6,13 +14,15 @@ nav{
     align-items: center;
     font-family: 'Sora', sans-serif;
     width:100%;
-    background-color:#121212;
     color:white;
- 
+ &.scrolled {
+      background-color: #131313;
+    }
 }
 
 .nav-desktop{
     padding: 0 12px 0 12px;
+   
 }
 
 @media(max-width: 768px){
@@ -30,7 +40,7 @@ nav{
     transition: all ease-in-out 300ms;
 }
 .logo:hover{
-    color:rgb(203, 30, 203);
+    color:$libelle-bouton-survol;
     }
 
 .onglet{
@@ -44,7 +54,7 @@ transition: all ease-in-out 300ms;
 }
 
 .onglet:hover{
-color:rgb(203, 30, 203);
+  color:$libelle-bouton-survol;
 }
 
 .ctn-onglet{
