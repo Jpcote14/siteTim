@@ -36,7 +36,7 @@
   top: 0; /* S'applique au viewport */
   z-index: 100; /* Assure la superposition au contenu */
   background-color: transparent; /* Couleur de fond */
-  transition: background-color 0.3s ease; /* Transition pour effet de scroll */
+  margin-bottom: 64px;
 }
 
 nav {
@@ -48,36 +48,63 @@ nav {
   font-family: "Sora", sans-serif;
   width: 100%;
   color: white;
+  padding: 10px 20px 10px 20px;
 }
-nav.scrolled {
-  background-color: #131313;
+
+.nav-mobile {
+  background-color: #131313; /* Couleur de fond */
 }
 
 .nav-desktop {
-  padding: 0 12px 0 12px;
+  transition: background-color 0.3s ease-in-out; /* Transition pour effet de scroll */
+  background-color: transparent; /* Couleur de fond */
+}
+.nav-desktop.scrolled {
+  background-color: #0e0c15;
 }
 
+@media (min-width: 768px) {
+  nav {
+    padding: 20px 40px 20px 40px;
+  }
+}
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
   }
 }
-.logo {
-  font-size: 36px;
-  color: White;
+.ctn-logo {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  padding: 12px 24px;
-  transition: all ease-in-out 300ms;
+  gap: 12px;
+  color: #CAC6DD;
 }
 
-.logo:hover {
+.ctn-logo:hover .logo-titre,
+.ctn-logo:hover .logo {
   color: #C67AFF;
+}
+
+.logo {
+  width: 48px;
+  color: #CAC6DD;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 64px;
+  }
+}
+.logo-titre {
+  font-size: 14px;
+  width: 200px;
+  color: #CAC6DD;
 }
 
 .onglet {
   display: block;
   font-size: 16px;
-  font-weight: 600;
   color: White;
   text-decoration: none;
   padding: 12px 24px;
@@ -149,9 +176,9 @@ nav.scrolled {
 }
 
 /* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
@@ -159,24 +186,24 @@ nav.scrolled {
 }
 
 /*
- * But let's hide the middle one.
- */
+  * But let's hide the middle one.
+  */
 #menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /*
- * Ohyeah and the last one should go the other direction
- */
+  * Ohyeah and the last one should go the other direction
+  */
 #menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
 /*
- * Make this absolute positioned
- * at the top left of the screen
- */
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
 #menu {
   position: absolute;
   top: 62px;
@@ -197,8 +224,8 @@ nav.scrolled {
 }
 
 /*
- * And let's slide it in from the left
- */
+  * And let's slide it in from the left
+  */
 #menuToggle input:checked ~ ul {
   transform: translateX(-100%);
 }
@@ -220,7 +247,8 @@ nav.scrolled {
 }
 
 body {
-  background: linear-gradient(166deg, #0E0C15 10%, #251030 96.5%);
+  color: #CAC6DD;
+  background: linear-gradient(166deg, #0e0c15 10%, #251030 96.5%);
 }
 
 .btn {
@@ -228,7 +256,7 @@ body {
   display: inline-block;
   padding: 12px 24px;
   font-size: 16px;
-  color: #d0d0d0;
+  color: #CAC6DD;
   background-color: transparent;
   border: none;
   border-radius: 12px;
@@ -236,7 +264,6 @@ body {
   cursor: pointer;
   z-index: 1;
   transition: color 200ms ease-in-out;
-  overflow: hidden;
 }
 .btn:before {
   content: "";

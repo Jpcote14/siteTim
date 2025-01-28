@@ -33,10 +33,10 @@
 /**** UTILITAIRES ****/
 
 /** Variables **/
-@import 'utilitaires/variables';
+@import "utilitaires/variables";
 
 /** Mixins **/
-@import 'utilitaires/mixins';
+@import "utilitaires/mixins";
 
 /****** BASE ******/
 
@@ -46,69 +46,57 @@
 /** Hyperliens **/
 // import 'base/hyperlien';
 
-
 /** Header **/
- @import 'header';
+@import "header";
 
 /****** MODULES ******/
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Sora', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
 }
 
-body{    
-    background: linear-gradient(166deg, #0E0C15 10%, #251030 96.5%);
+body {
+  color: $texte-blanc;
+  background: linear-gradient(166deg, #0e0c15 10%, #251030 96.5%);
 }
-
 
 .btn {
-    position: relative;
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 16px;
-    color: #d0d0d0; // Couleur du texte
-    background-color: transparent; // Fond transparent
-    border: none; // Pas besoin de bordure CSS ici
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    z-index: 1; 
-     transition: color 200ms ease-in-out;
-    overflow: hidden; // Assure que le pseudo-élément reste dans les limites
-  
-    &:before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      padding: 2px; // Épaisseur de la bordure
-      background: $multicolor; // Utilisation de la variable pour le gradient conique
-      border-radius: inherit; // Applique le même border-radius que le bouton
-      -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0); // Crée un masque
-      -webkit-mask-composite: destination-out;
-      mask-composite: exclude;
-      z-index: -1;
-    }
-  
-    // Optionnel : ajouter un effet hover si nécessaire
-    &:hover {
-      color: $libelle-bouton-survol; // Change la couleur du texte
-    }
-  }
-  
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: $texte-blanc;
+  background-color: transparent;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 200ms ease-in-out;
 
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: $multicolor;
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); // Crée un masque
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $libelle-bouton-survol;
+  }
+}
 
 .div-gradient {
-    width: 200px;
-    height: 200px;
-    @include gradient-border(4px, 12px); // Tu peux ajuster la largeur et le border-radius ici
-  }
-
-
-
-
-
+  width: 200px;
+  height: 200px;
+  @include gradient-border(4px, 12px); // Tu peux ajuster la largeur et le border-radius ici
+}
