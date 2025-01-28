@@ -106,6 +106,14 @@ p {
   margin-bottom: 96px;
 }
 
+.ctn-formulaire {
+  flex: basis 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 32px;
+}
+
 .ctn-carte-prof {
   width: 100%;
   display: flex;
@@ -119,9 +127,12 @@ p {
     flex-direction: row;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1080px) {
   .ctn-carte-prof {
+    flex: 0 0 320px;
+    width: fit-content;
     flex-direction: column;
+    margin-bottom: 0;
   }
 }
 .carte-prof {
@@ -141,12 +152,12 @@ p {
     margin-bottom: 32px;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1080px) {
   .carte-prof {
     width: 360px;
     height: 200px;
     padding: 16px 24px 16px 24px;
-    margin-bottom: 64px;
+    margin-bottom: 32px;
   }
 }
 .info-prof {
@@ -163,7 +174,7 @@ p {
   display: none;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1080px) {
   .role-prof {
     display: block;
   }
@@ -173,6 +184,7 @@ p {
   width: 60px;
   height: 60px;
   margin-right: 16px;
+  filter: grayscale(100%);
 }
 
 @media (min-width: 768px) {
@@ -183,13 +195,20 @@ p {
     left: 220;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1080px) {
   .img-prof {
     width: 80px;
+    height: 80px;
     top: -30;
-    left: 300;
+    left: 260;
   }
 }
+.formulaire {
+  flex: 1;
+  border: 1px solid #221E30;
+  border-radius: 12px;
+}
+
 /** Header **/
 .main-header {
   width: 100%;
