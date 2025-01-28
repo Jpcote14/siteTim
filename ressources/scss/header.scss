@@ -1,4 +1,5 @@
 .main-header {
+  width:100%;
   position: sticky; /* Garde le header visible en haut */
   top: 0; /* S'applique au viewport */
   z-index: 100; /* Assure la superposition au contenu */
@@ -13,7 +14,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-family: "Sora", sans-serif;
-  width: 100%;
   color: white;
   padding: 10px 20px 10px 20px;
 }

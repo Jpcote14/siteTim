@@ -103,6 +103,7 @@ p {
 
 /** Header **/
 .main-header {
+  width: 100%;
   position: sticky; /* Garde le header visible en haut */
   top: 0; /* S'applique au viewport */
   z-index: 100; /* Assure la superposition au contenu */
@@ -117,7 +118,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-family: "Sora", sans-serif;
-  width: 100%;
   color: white;
   padding: 10px 20px 10px 20px;
 }
@@ -368,28 +368,6 @@ main {
 }
 .btn:hover {
   color: #C67AFF;
-}
-
-.div-gradient {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  background: transparent;
-  border-radius: 12px;
-  border: 4px solid transparent;
-  overflow: hidden;
-}
-.div-gradient::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: conic-gradient(from 180deg at 50% 50%, #89f9e8, #facb7b, #d87cee, #9099fc, #89f9e8);
-  padding: 4px;
-  z-index: -1;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
 }
 
 /*# sourceMappingURL=styles.css.map */

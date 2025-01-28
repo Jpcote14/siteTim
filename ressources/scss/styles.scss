@@ -58,6 +58,7 @@
   margin: 0;
   padding: 0;
   font-family: "Sora", sans-serif;
+
 }
 
 body {
@@ -123,10 +124,4 @@ main {
   &:hover {
     color: $libelle-bouton-survol;
   }
-}
-
-.div-gradient {
-  width: 200px;
-  height: 200px;
-  @include gradient-border(4px, 12px); // Tu peux ajuster la largeur et le border-radius ici
 }
