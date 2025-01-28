@@ -1,84 +1,49 @@
-/**
-* @author Prenom Nom courriel
-* @todo Préciser l’interlignage sur le body pour l’écran large
-* @todo Utiliser le mixin fontSize pour définir les tailles de polices
-* @todo Utiliser une variable pour la media query de la règle body
-*/
+// _typography.scss
 
-/**** Typographie responsive ****/
+// Polices
+$font-primary: "Sora", sans-serif;
 
-html {
-  font-size: 62.5%;
+// Tailles de texte
+$font-size-text: 16px;
+$font-size-title-xl: 68px;
+$font-size-h1: 42px;
+$font-size-h2: 26px;
+$font-size-h3: 20px;
+$font-size-label: 18px;
+
+// Hauteurs de ligne (line-height en pixels)
+$line-height-text: 23.2px;
+$line-height-title-xl: 61px;
+$line-height-h1: 61px;
+$line-height-h2: 60.7px;
+$line-height-h3: 31px;
+$line-height-label: 31px;
+
+// Poids des polices (font-weight)
+$font-weight-regular: 400; // Texte courant
+$font-weight-semibold: 600; // H1, H2, H3, Libellé input
+$font-weight-bold: 700; // Très grand titre
+
+h1 {
+  @include titre-h1;
 }
 
-body {
-  font-family: $fonteSecondaire;
-  font-size: 16px; /* 16px pour toutes les largeurs d'écran */
-  font-size: 1.6rem;
-  line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
-  @media (min-width: 601px) {
-  }
+h2 {
+  @include titre-h2;
 }
 
-h1,
-.titreNiveau1,
-h2,
-.titreNiveau2,
-h3,
-.titreNiveau3 {
-  font-family: $fontePrimaire;
-  font-weight: 500;
+h3 {
+  @include titre-h3;
 }
 
-h1,
-.titreNiveau1 {
-  @include fontSize(28px);
-  margin: 0;
-  &--desktop {
-    font-size: 48px;
-    font-size: 4.8rem;
-    padding-bottom: 15px;
-    position: relative;
-    &:after {
-      background-color: $bleuMoyen;
-      content: "";
-      display: inline-block;
-      width: 150px;
-      height: 8px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
-  }
+p {
+  @include texte-courant;
 }
 
-h2,
-.titreNiveau2{
-  font-size: 20px;
-  font-size: 2rem;
-  text-transform: uppercase;
-  &--desktop {
-    font-size: 28px;
-    font-size: 2.8rem;
-  }
+.label {
+  @include libelle-input;
 }
 
-h3,
-.titreNiveau3 {
-  font-size: 18px;
-  font-size: 1.8rem;
-  &--desktop {
-    font-size: 22px;
-    font-size: 2.2rem;
-  }
-}
-
-.texte {
-  font-family: $fonteSecondaire;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.375;
-  &--desktop {
-    line-height: 1.5;
-  }
+.titre-xl {
+  @include titre-tres-grand;
 }

@@ -2,7 +2,8 @@ $texte-blanc: #CAC6DD;
 $libelle-bouton-survol:#C67AFF;
 $background: #0E0C15;
 $gradient: linear-gradient(90deg, #89F9E8, #FACB7B, #D87CEE, #9099FC);
-
+$bordure: #221E30;
+$border-radius:12px;
 // Déclaration de la variable pour le gradient conique
 $multicolor: conic-gradient(
   from 180deg at 50% 50%, 

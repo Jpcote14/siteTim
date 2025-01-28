@@ -1,0 +1,31 @@
+.ctn-intro-page{
+display:flex;
+flex-direction: column;
+gap: 16px;
+max-width:550px;
+margin-bottom:96px;
+}
+
+.carte-prof{
+// @include gradient-border;
+display:flex;
+flex-direction: column;
+justify-content: space-between;
+width:360px;
+height: 200px;
+border:1px solid $bordure;
+border-radius: $border-radius;
+padding: 16px 24px 16px 24px;
+margin-bottom: 64px;
+position:relative;
+}
+
+
+
+.img-prof{
+    width:80px;
+    position: absolute;
+    top:-30;
+    left:300;
+    
+}

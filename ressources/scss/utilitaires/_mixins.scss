@@ -1,23 +1,70 @@
-@mixin gradient-border($border-width: 12px, $border-radius: 12px, $gradient: null) {
-    $gradient: if($gradient == null, conic-gradient(from 180deg at 50% 50%, #89F9E8, #FACB7B, #D87CEE, #9099FC, #89F9E8), $gradient);
-  
-    position: relative;
-    background: transparent;
-    border-radius: $border-radius;
-    border: $border-width solid transparent;
-    overflow: hidden;
-  
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: $gradient;
-      padding: $border-width;
-      z-index: -1;
-  
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: destination-out;
-      mask-composite: exclude;
-    }
+@mixin gradient-border($border-width: 2px, $border-radius: 12px, $gradient: null) {
+  $gradient: if(
+    $gradient == null,
+    conic-gradient(from 180deg at 50% 50%, #89f9e8, #facb7b, #d87cee, #9099fc, #89f9e8),
+    $gradient
+  );
+
+  position: relative;
+  background: transparent;
+  border-radius: $border-radius;
+  border: $border-width solid transparent;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: $gradient;
+    padding: $border-width;
+    z-index: -1;
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
   }
+}
+
+//
+//Typographie style de texte
+//
+
+// _typographie
+
+@mixin style-texte($taille, $poids, $hauteur-ligne, $couleur: #ffffff) {
+  font-size: $taille;
+  font-weight: $poids;
+  line-height: $hauteur-ligne;
+  color: $couleur;
+}
+
+// Très grand titre (gras) - Blanc pur
+@mixin titre-tres-grand {
+  @include style-texte($font-size-title-xl, $font-weight-bold, $line-height-title-xl, #ffffff);
+}
+
+// H1 (semi-gras) - Blanc pur
+@mixin titre-h1 {
+  @include style-texte($font-size-h1, $font-weight-semibold, $line-height-h1, #ffffff);
+}
+
+// H2 (semi-gras) - Blanc pur
+@mixin titre-h2 {
+  @include style-texte($font-size-h2, $font-weight-semibold, $line-height-h2, #ffffff);
+}
+
+// H3 (semi-gras) - Blanc pur
+@mixin titre-h3 {
+  @include style-texte($font-size-h3, $font-weight-semibold, $line-height-h3, #ffffff);
+}
+
+// Texte courant (normal) - $texte-blanc
+@mixin texte-courant {
+  @include style-texte($font-size-text, $font-weight-regular, $line-height-text, $texte-blanc);
+}
+
+// Libellé input (semi-gras) - $texte-blanc
+@mixin libelle-input {
+  @include style-texte($font-size-label, $font-weight-semibold, $line-height-label, $texte-blanc);
+}

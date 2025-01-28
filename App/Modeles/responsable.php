@@ -16,6 +16,10 @@ class Responsable
     private string $nom;
     private string $telephone;
 
+    private string $role;
+
+    private string $chemin_image;
+
     public function __construct() {}
 
     public static function trouverParId($unIdResponsable): Responsable
@@ -98,5 +102,26 @@ class Responsable
     public function setTelephone(string $telephone): void
     {
         $this->telephone = $telephone;
+    }
+
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): void
+    {
+        $this->role = $role;
+    }
+
+
+    public function getCheminImage(): string
+    {
+        return $this->chemin_image;
+    }
+
+    public function setCheminImage(string $chemin_image): void
+    {
+        $this->chemin_image = $chemin_image;
     }
 }
