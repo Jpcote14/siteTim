@@ -34,6 +34,7 @@ h1 {
   font-size: 36px;
   line-height: 61px;
   font-weight: 600;
+  color: #FFFFFF;
 }
 @media (min-width: 1080px) {
   h1 {
@@ -48,6 +49,7 @@ h2 {
   font-size: 20px;
   line-height: 60.7px;
   font-weight: 600;
+  color: #FFFFFF;
 }
 @media (min-width: 1080px) {
   h2 {
@@ -61,6 +63,7 @@ h3 {
   font-size: 20px;
   line-height: 31px;
   font-weight: 600;
+  color: #FFFFFF;
 }
 @media (min-width: 1080px) {
   h3 {
@@ -74,6 +77,7 @@ p {
   font-size: 16px;
   line-height: 23.2px;
   font-weight: 400;
+  color: #CAC6DD;
 }
 
 .label {
@@ -81,6 +85,7 @@ p {
   font-size: 18px;
   line-height: 31px;
   font-weight: 600;
+  color: #CAC6DD;
 }
 
 .titre-xl {
@@ -88,6 +93,7 @@ p {
   font-size: 56px;
   line-height: 61px;
   font-weight: 700;
+  color: #FFFFFF;
 }
 @media (min-width: 1080px) {
   .titre-xl {
@@ -106,20 +112,22 @@ p {
   margin-bottom: 96px;
 }
 
-.ctn-formulaire {
-  flex: basis 1;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 32px;
+@media (min-width: 1080px) {
+  .ctn-formulaire {
+    flex: basis 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 32px;
+  }
 }
-
 .ctn-carte-prof {
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 16px;
+  margin-bottom: 32px;
 }
 
 @media (min-width: 768px) {
@@ -167,7 +175,7 @@ p {
 }
 
 .responsabilite-prof {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .role-prof {
@@ -207,6 +215,28 @@ p {
   flex: 1;
   border: 1px solid #221E30;
   border-radius: 12px;
+  padding: 0 20px 0 20px;
+}
+
+.ctn-input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #221E30;
+  background-color: transparent;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #CAC6DD;
+  padding: 16px 8px 16px 8px;
+  margin-bottom: 16px;
+}
+
+.ctn-input label {
+  margin-bottom: 8px;
 }
 
 /** Header **/
@@ -426,7 +456,6 @@ nav {
 }
 
 body {
-  color: #CAC6DD;
   background: linear-gradient(166deg, #0e0c15 10%, #251030 96.5%);
 }
 

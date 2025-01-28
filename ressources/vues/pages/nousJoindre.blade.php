@@ -6,12 +6,12 @@ Nous joindre
 
 @section('contenu')
 <div class="ctn-intro-page">
-    <h1>Nous joindre</h1>
+    <h1 class="h1">Nous joindre</h1>
     <p class="">Pour toute question ou information, contactez-nous par courriel ou par téléphone – notre équipe se fera un plaisir de vous répondre rapidement !</p>
 </div>
 
 <div class="ctn-formulaire">
-    <div class="ctn-carte-prof"> 
+    <div class="ctn-carte-prof">
 
         @foreach($responsables as $responsable)
         <div class="carte-prof">
@@ -20,22 +20,84 @@ Nous joindre
             <div class="info-prof">
 
                 <div>
-                <h3 class="h3">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
-                <p class="responsabilite-prof" >{{$responsable->getResponsabilite()}}</p> <span class="role-prof"> {{$responsable->getRole()}}</span>
-            </div>
-            <p>{{$responsable->getTelephone()}}</p>
+                    <h3 class="h3">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
+                    <p class="responsabilite-prof">{{$responsable->getResponsabilite()}}</p>
+                    <p class="role-prof"> {{$responsable->getRole()}}</p>
+                </div>
+                <p>{{$responsable->getTelephone()}}</p>
             </div>
         </div>
         @endforeach
-</div>
-  
+    </div>
 
-<form class="formulaire" action="#" method="post">
 
-        <h2>Contacte par téléphone</h2>
+    <form class="formulaire" action="#" method="post">
+
+        <!-- Faire un script qui permet dafficher le nom du responsable choisi -->
+        <h2>Contacte Pascal Larose</h2>
 
         <div class="ctn-input">
-            <label class="" for="joindrePrenom">Prénom</label>
+            <label class="label" for="joindrePrenom">Prénom</label>
+            <input
+                type="text"
+                id="joindrePrenom"
+                name=""
+                placeholder=""
+                aria-labelledby=""
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby=""
+                value="Jean-Philippe"
+                class="input" />
+        </div>
+
+        <div class="ctn-input">
+            <label class="label" for="joindrePrenom">Prénom</label>
+            <input
+                type="text"
+                id="joindrePrenom"
+                name=""
+                placeholder=""
+                aria-labelledby=""
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby=""
+                value=""
+                class="input" />
+        </div>
+
+        <div class="ctn-input">
+            <label class="label" for="joindrePrenom">Prénom</label>
+            <input
+                type="text"
+                id="joindrePrenom"
+                name=""
+                placeholder=""
+                aria-labelledby=""
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby=""
+                value=""
+                class="input" />
+        </div>
+
+        <div class="ctn-input">
+            <label class="label" for="joindrePrenom">Prénom</label>
+            <input
+                type="text"
+                id="joindrePrenom"
+                name=""
+                placeholder=""
+                aria-labelledby=""
+                aria-required="true"
+                aria-invalid="false"
+                aria-describedby=""
+                value=""
+                class="input" />
+        </div>
+
+        <div class="ctn-input">
+            <label class="label" for="joindrePrenom">Prénom</label>
             <input
                 type="text"
                 id="joindrePrenom"
@@ -56,24 +118,3 @@ Nous joindre
 
 
 @endsection
-
-<!-- <form action="#" method="post">
-
-        <h2>Contacte par téléphone</h2>
-
-        <div class="ctn-input">
-            <label class="" for="joindrePrenom">Prénom</label>
-            <input
-                type="text"
-                id="joindrePrenom"
-                name=""
-                placeholder=""
-                aria-labelledby=""
-                aria-required="true"
-                aria-invalid="false"
-                aria-describedby=""
-                value=""
-                class="input" />
-        </div>
-
-    </form> -->
