@@ -3,7 +3,7 @@
 @section('title')
 Nous joindre
 @endsection
-{{-- <div>{{ $message->getTelephone() }}</div> --}}
+
 @section('contenu')
 <div class="ctn-intro-page">
     <h1>Nous joindre</h1>
@@ -11,24 +11,24 @@ Nous joindre
 </div>
 
 <div class="ctn-formulaire">
-    <div class="">
-
+    <div class="ctn-carte-prof"> 
 
         @foreach($responsables as $responsable)
         <div class="carte-prof">
 
             <img class="img-prof" src={{$responsable->getCheminImage()}} alt="">
-            <div class="">
-                <h2 class="h2">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h2>
-                <p>{{$responsable->getResponsabilite()}}: {{$responsable->getRole()}}</p>
+            <div class="info-prof">
+
+                <div>
+                <h3 class="h3">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
+                <p class="responsabilite-prof" >{{$responsable->getResponsabilite()}}</p> <span class="role-prof"> {{$responsable->getRole()}}</span>
             </div>
             <p>{{$responsable->getTelephone()}}</p>
-
+            </div>
         </div>
         @endforeach
-
-
-    </div>
+</div>
+  
 
 </div>
 

@@ -3,47 +3,68 @@
 // Polices
 $font-primary: "Sora", sans-serif;
 
-// Tailles de texte
-$font-size-text: 16px;
-$font-size-title-xl: 68px;
-$font-size-h1: 42px;
-$font-size-h2: 26px;
-$font-size-h3: 20px;
-$font-size-label: 18px;
+// _typography.scss
 
-// Hauteurs de ligne (line-height en pixels)
-$line-height-text: 23.2px;
-$line-height-title-xl: 61px;
-$line-height-h1: 61px;
-$line-height-h2: 60.7px;
-$line-height-h3: 31px;
-$line-height-label: 31px;
-
-// Poids des polices (font-weight)
-$font-weight-regular: 400; // Texte courant
-$font-weight-semibold: 600; // H1, H2, H3, Libellé input
-$font-weight-bold: 700; // Très grand titre
-
+// Mobile-first styles
 h1 {
-  @include titre-h1;
+  font-family: "Sora", sans-serif;
+  font-size: 36px;
+  line-height: 61px;
+  font-weight: 600;
+
+  @media (min-width: 1080px) {
+    font-size: 42px;
+    line-height: 61px;
+    font-weight: 600;
+  }
 }
 
 h2 {
-  @include titre-h2;
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  line-height: 60.7px;
+  font-weight: 600;
+
+  @media (min-width: 1080px) {
+    font-size: 26px;
+    line-height: 61px;
+  }
 }
 
 h3 {
-  @include titre-h3;
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  line-height: 31px;
+  font-weight: 600;
+
+  @media (min-width: 1080px) {
+    font-size: 20px;
+    line-height: 60.7px;
+  }
 }
 
 p {
-  @include texte-courant;
+  font-family: "Sora", sans-serif;
+  font-size: 16px;
+  line-height: 23.2px;
+  font-weight: 400;
 }
 
 .label {
-  @include libelle-input;
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+  line-height: 31px;
+  font-weight: 600;
 }
 
 .titre-xl {
-  @include titre-tres-grand;
+  font-family: "Sora", sans-serif;
+  font-size: 56px;
+  line-height: 61px;
+  font-weight: 700;
+
+  @media (min-width: 1080px) {
+    font-size: 68px; // inchangé
+    line-height: 61px;
+  }
 }

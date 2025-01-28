@@ -1,31 +1,99 @@
-.ctn-intro-page{
-display:flex;
-flex-direction: column;
-gap: 16px;
-max-width:550px;
-margin-bottom:96px;
+.ctn-intro-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 550px;
+  margin-bottom: 96px;
 }
 
-.carte-prof{
-// @include gradient-border;
-display:flex;
-flex-direction: column;
-justify-content: space-between;
-width:360px;
-height: 200px;
-border:1px solid $bordure;
-border-radius: $border-radius;
-padding: 16px 24px 16px 24px;
-margin-bottom: 64px;
-position:relative;
+.ctn-carte-prof {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
+@media (min-width: 768px) {
+  .ctn-carte-prof {
+    flex-direction: row;
+  }
+}
 
+@media (min-width: 1440px) {
+  .ctn-carte-prof {
+    flex-direction: column;
+  }
+}
 
-.img-prof{
-    width:80px;
+.carte-prof {
+  // @include gradient-border;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $bordure;
+  border-radius: $border-radius;
+  padding: 8px 12px 8px 12px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .carte-prof {
+    width: 340px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .carte-prof {
+    width: 360px;
+    height: 200px;
+    padding: 16px 24px 16px 24px;
+    margin-bottom: 64px;
+  }
+}
+
+.info-prof {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.responsabilite-prof {
+  font-weight: 600;
+}
+
+.role-prof {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .role-prof {
+    display: block;
+  }
+}
+
+.img-prof {
+  position: static;
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .img-prof {
+    width: 60px;
     position: absolute;
-    top:-30;
-    left:300;
-    
+    top: -25;
+    left: 220;
+  }
+}
+
+@media (min-width: 1440px) {
+  .img-prof {
+    width: 80px;
+    top: -30;
+    left: 300;
+  }
 }

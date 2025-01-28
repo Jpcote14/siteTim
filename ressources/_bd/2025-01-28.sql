@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 28 jan. 2025 à 15:49
+-- Généré le : mar. 28 jan. 2025 à 18:48
 -- Version du serveur : 5.7.24
--- Version de PHP : 8.3.1
+-- Version de PHP : 8.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -404,10 +404,10 @@ CREATE TABLE `responsables` (
 --
 
 INSERT INTO `responsables` (`id`, `responsabilite`, `role`, `courriel`, `prenom`, `nom`, `telephone`, `chemin_image`) VALUES
-(1, 'Coordonnateur départemental', 'Coordinateur du programme : Supervise le programme et assure son bon fonctionnement académique.', 'techmultimedia@csfoy.ca', 'Sylvain', 'Lamoureux', '(418) 659-6600 poste 6662', 'sylvain.png'),
-(2, 'Webmestre', 'Webmestre : Responsable de la gestion, mise à jour et maintenance du site web.', 'eve.fevrier@csfoy.ca', 'Ève', 'Février', '(418) 659-6600 poste 6655', 'eve.png'),
-(3, 'Responsable des stages', 'Responsable des stages : Gère du placement au suivi administratif des stages.', 'stages-tim@csfoy.ca', 'Pascal', 'Larose', '(418) 659-6600 poste 6653', 'pascal.png'),
-(4, 'Responsable \"Étudiant d\'un jour\"', 'Responsable Étudiant d’un jour : Coordonne les visites pour les futurs étudiants intéressés.', 'benoit.frigon@csfoy.ca', 'Benoît', 'Frigon', '(418) 659-6600 poste 6656', 'benoit.png');
+(1, 'Coordonnateur départemental', 'Supervise le programme et assure son bon fonctionnement académique.', 'techmultimedia@csfoy.ca', 'Sylvain', 'Lamoureux', '(418) 659-6600 poste 6662', 'assets/responsables/sylvain.png'),
+(2, 'Webmestre', 'Responsable de la gestion, mise à jour et maintenance du site web.', 'eve.fevrier@csfoy.ca', 'Ève', 'Février', '(418) 659-6600 poste 6655', 'assets/responsables/eve.png'),
+(3, 'Responsable des stages', 'Gère du placement au suivi administratif des stages.', 'stages-tim@csfoy.ca', 'Pascal', 'Larose', '(418) 659-6600 poste 6653', 'assets/responsables/pascal.png'),
+(4, 'Responsable \"Étudiant d\'un jour\"', 'Coordonne les visites pour les futurs étudiants intéressés.', 'benoit.frigon@csfoy.ca', 'Benoît', 'Frigon', '(418) 659-6600 poste 6656', 'assets/responsables/benoit.png');
 
 -- --------------------------------------------------------
 
