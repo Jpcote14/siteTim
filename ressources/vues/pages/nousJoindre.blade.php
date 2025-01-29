@@ -12,6 +12,11 @@ Nous joindre
 
 <form class="ctn-formulaire" action="#" method="post">
     <div class="ctn-carte-prof">
+        <div class="ctn-nos-responsables">
+            <h2 class="h2">Nos responsables</h2>
+            <p>Choisi avec qui tu souhaite communiquer parmis nos 4 professeurs responsable du programme.</p>
+        </div>
+
 
         @foreach($responsables as $responsable)
         <label for="responsable-{{$responsable->getId()}}" class="carte-prof">
