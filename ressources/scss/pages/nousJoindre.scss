@@ -50,6 +50,13 @@
   }
 }
 
+@media(min-width:1080px){
+  .ctn-nos-responsables{
+    margin-bottom: 64px;
+width:360px;
+  }
+}
+
 .carte-prof {
   width: 100%;
  height:180px;
@@ -77,6 +84,7 @@
     height: 200px;
     padding: 16px 24px 16px 24px;
     margin-bottom: 32px;
+    justify-content: space-between;
   }
 }
 
@@ -93,11 +101,27 @@
   filter: grayscale(0%);
 }
 
+@media(min-width:1080px){
+.ctn-infos{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100%;
+}
+}
+
 .info-prof {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media(min-width:1080px){
+  .info-prof{
+    height:100%;
+  }
+}
+
 
 .responsabilite-prof {
   font-weight: 800;
@@ -190,6 +214,10 @@ font-size:16px;
 color:$texte-blanc;
 padding: 16px 8px 16px 8px;
 margin-bottom: 16px;
+}
+
+input:focus {
+  border-color:red !important;
 }
 
 

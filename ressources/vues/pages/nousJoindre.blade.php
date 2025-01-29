@@ -11,41 +11,43 @@ Nous joindre
 </div>
 
 <form class="ctn-formulaire" action="#" method="post">
-    <div class="ctn-carte-prof">
+
+    <div class="ctn-droite">
         <div class="ctn-nos-responsables">
             <h2 class="h2">Nos responsables</h2>
             <p>Choisi avec qui tu souhaite communiquer parmis nos 4 professeurs responsable du programme.</p>
         </div>
 
+        <div class="ctn-carte-prof">
+            @foreach($responsables as $responsable)
+            <label for="responsable-{{$responsable->getId()}}" class="carte-prof">
+                <!-- Bouton radio caché -->
+                <input class="radio-prof" type="radio" id="responsable-{{$responsable->getId()}}"
+                    name="responsableSelectionne" value="{{$responsable->getId()}}"
+                    @if($loop->first) checked @endif>
 
-        @foreach($responsables as $responsable)
-        <label for="responsable-{{$responsable->getId()}}" class="carte-prof">
-            <!-- Bouton radio caché -->
-            <input class="radio-prof" type="radio" id="responsable-{{$responsable->getId()}}"
-                name="responsableSelectionne" value="{{$responsable->getId()}}"
-                @if($loop->first) checked @endif>
-
-            <!-- Contenu de la carte -->
-            <div class="info-prof">
-                <img class="img-prof" src="{{$responsable->getCheminImage()}}"
-                    alt="Photo de {{$responsable->getPrenom()}} {{$responsable->getNom()}}">
-                <div>
-                    <h3 class="h3 h3-contact">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
-                    <p class="responsabilite-prof">{{$responsable->getResponsabilite()}}</p>
-                    <p class="role-prof">{{$responsable->getRole()}}</p>
-                    <p>{{$responsable->getTelephone()}}</p>
+                <!-- Contenu de la carte -->
+                <div class="info-prof">
+                    <img class="img-prof" src="{{$responsable->getCheminImage()}}"
+                        alt="Photo de {{$responsable->getPrenom()}} {{$responsable->getNom()}}">
+                    <div class="ctn-infos">
+                        <h3 class="h3 h3-contact">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
+                        <div>
+                            <p class="responsabilite-prof">{{$responsable->getResponsabilite()}}</p>
+                            <p class="role-prof">{{$responsable->getRole()}}</p>
+                        </div>
+                        <p>{{$responsable->getTelephone()}}</p>
+                    </div>
                 </div>
-            </div>
-        </label>
-        @endforeach
+            </label>
+            @endforeach
 
 
+        </div>
     </div>
-
 
     <div class="formulaire">
 
-        <!-- Faire un script qui permet dafficher le nom du responsable choisi -->
         <h2 id="choixResponsable" class="h2 h2-contact">Contactezr Sylvain Lamoureux</h2>
 
         <div class="ctn-input">
@@ -53,7 +55,7 @@ Nous joindre
             <input
                 type="text"
                 id="joindrePrenom"
-                name=""
+                name="prenom"
                 placeholder=""
                 aria-labelledby=""
                 aria-required="true"
