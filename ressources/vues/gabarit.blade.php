@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
     <script defer src="scripts/header.js"></script>
+    <script defer src="scripts/formulaire.js"></script>
     <title>Timcsf</title>
 </head>
 

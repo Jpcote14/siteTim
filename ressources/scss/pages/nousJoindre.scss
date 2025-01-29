@@ -40,15 +40,17 @@
 }
 
 .carte-prof {
-  // @include gradient-border;
   width: 100%;
-  height: 140px;
+ height:180px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   border: 1px solid $bordure;
   border-radius: $border-radius;
   padding: 8px 12px 8px 12px;
   position: relative;
+  transition: filter 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -67,14 +69,27 @@
   }
 }
 
+.carte-prof:hover {
+  @include gradient-border;
+
+}
+
+.carte-prof:has(.radio-prof:checked) {
+  @include gradient-border;
+}
+
+.carte-prof:has(.radio-prof:checked) .img-prof {
+  filter: grayscale(0%);
+}
+
 .info-prof {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 }
 
 .responsabilite-prof {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .role-prof {
@@ -93,6 +108,8 @@
   height: 60px;
   margin-right: 16px;
   filter: grayscale(100%);
+  z-index:50;
+  transition: filter 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -123,7 +140,21 @@
     flex: 1;
     border: 1px solid $bordure;
     border-radius: $border-radius;
-    padding:0 20px 0 20px;
+    padding:32px 20px 0 20px;
+}
+
+@media(min-width:1440px){
+  .formulaire{
+    padding: 32px 60px 0 60px;
+  }
+}
+
+.h2-contact{
+  margin-bottom: 48px;
+}
+
+.h3-contact{
+  margin-bottom:8px;
 }
 
 .ctn-input{
@@ -134,7 +165,12 @@ flex-wrap:nowrap;
 
 }
 
+.radio-prof {
+  display: none;
+}
+
 .input{
+  @include gradient-border;
 width:100%;
   border: 1px solid $bordure;
 background-color:transparent;
@@ -145,12 +181,8 @@ padding: 16px 8px 16px 8px;
 margin-bottom: 16px;
 }
 
+
 .ctn-input label{
   margin-bottom:8px;
 }
 
-// @media(min-width:768px){
-//   .input{
-//     width:320px;
-//   }
-// }

@@ -1,4 +1,4 @@
-@mixin gradient-border($border-width: 2px, $border-radius: 12px, $gradient: null) {
+@mixin gradient-border($border-width: 1px, $border-radius: 12px, $gradient: null) {
   $gradient: if(
     $gradient == null,
     conic-gradient(from 180deg at 50% 50%, #89f9e8, #facb7b, #d87cee, #9099fc, #89f9e8),
@@ -9,7 +9,6 @@
   background: transparent;
   border-radius: $border-radius;
   border: $border-width solid transparent;
-  overflow: hidden;
 
   &::before {
     content: "";

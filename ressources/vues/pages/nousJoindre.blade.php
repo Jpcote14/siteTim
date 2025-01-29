@@ -10,31 +10,38 @@ Nous joindre
     <p class="">Pour toute question ou information, contactez-nous par courriel ou par téléphone – notre équipe se fera un plaisir de vous répondre rapidement !</p>
 </div>
 
-<div class="ctn-formulaire">
+<form class="ctn-formulaire" action="#" method="post">
     <div class="ctn-carte-prof">
 
         @foreach($responsables as $responsable)
-        <div class="carte-prof">
+        <label for="responsable-{{$responsable->getId()}}" class="carte-prof">
+            <!-- Bouton radio caché -->
+            <input class="radio-prof" type="radio" id="responsable-{{$responsable->getId()}}"
+                name="responsableSelectionne" value="{{$responsable->getId()}}"
+                @if($loop->first) checked @endif>
 
-            <img class="img-prof" src={{$responsable->getCheminImage()}} alt="">
+            <!-- Contenu de la carte -->
             <div class="info-prof">
-
+                <img class="img-prof" src="{{$responsable->getCheminImage()}}"
+                    alt="Photo de {{$responsable->getPrenom()}} {{$responsable->getNom()}}">
                 <div>
-                    <h3 class="h3">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
+                    <h3 class="h3 h3-contact">{{$responsable->getPrenom()}} {{$responsable->getNom()}}</h3>
                     <p class="responsabilite-prof">{{$responsable->getResponsabilite()}}</p>
-                    <p class="role-prof"> {{$responsable->getRole()}}</p>
+                    <p class="role-prof">{{$responsable->getRole()}}</p>
+                    <p>{{$responsable->getTelephone()}}</p>
                 </div>
-                <p>{{$responsable->getTelephone()}}</p>
             </div>
-        </div>
+        </label>
         @endforeach
+
+
     </div>
 
 
-    <form class="formulaire" action="#" method="post">
+    <div class="formulaire">
 
         <!-- Faire un script qui permet dafficher le nom du responsable choisi -->
-        <h2>Contacte Pascal Larose</h2>
+        <h2 id="choixResponsable" class="h2 h2-contact">Contactezr Sylvain Lamoureux</h2>
 
         <div class="ctn-input">
             <label class="label" for="joindrePrenom">Prénom</label>
@@ -111,9 +118,9 @@ Nous joindre
                 class="input" />
         </div>
 
-    </form>
+    </div>
 
-</div>
+</form>
 
 
 
