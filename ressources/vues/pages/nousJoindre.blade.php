@@ -48,29 +48,29 @@ Nous joindre
 
     <div class="formulaire">
 
-        <h2 id="choixResponsable" class="h2 h2-contact">Contactezr Sylvain Lamoureux</h2>
+        <h2 id="choixResponsable" class="h2 h2-contact">Joindre Sylvain Lamoureux</h2>
 
         <div class="ctn-input">
-            <label class="label" for="joindrePrenom">Prénom</label>
+            <label class="label" for="nomPrenom">Nom complet</label>
             <input
                 type="text"
-                id="joindrePrenom"
-                name="prenom"
-                placeholder=""
+                id="nomPrenom"
+                name="nomPrenom"
+                placeholder="Jean-Philippe Côté"
                 aria-labelledby=""
                 aria-required="true"
                 aria-invalid="false"
                 aria-describedby=""
-                value="Jean-Philippe"
+                value=""
                 class="input" />
         </div>
 
         <div class="ctn-input">
-            <label class="label" for="joindrePrenom">Prénom</label>
+            <label class="label" for="courriel">Adresse courriel</label>
             <input
                 type="text"
-                id="joindrePrenom"
-                name=""
+                id="courriel"
+                name="courriel"
                 placeholder=""
                 aria-labelledby=""
                 aria-required="true"
@@ -81,12 +81,12 @@ Nous joindre
         </div>
 
         <div class="ctn-input">
-            <label class="label" for="joindrePrenom">Prénom</label>
+            <label class="label" for="sujet">Prénom</label>
             <input
                 type="text"
-                id="joindrePrenom"
-                name=""
-                placeholder=""
+                id="sujet"
+                name="sujet"
+                placeholder="Étudiant d'un jour, stage, questions..."
                 aria-labelledby=""
                 aria-required="true"
                 aria-invalid="false"
@@ -96,35 +96,11 @@ Nous joindre
         </div>
 
         <div class="ctn-input">
-            <label class="label" for="joindrePrenom">Prénom</label>
-            <input
-                type="text"
-                id="joindrePrenom"
-                name=""
-                placeholder=""
-                aria-labelledby=""
-                aria-required="true"
-                aria-invalid="false"
-                aria-describedby=""
-                value=""
-                class="input" />
-        </div>
+            <label class="label" for="message">Message</label>
+            <textarea id="message" name="message" rows="10" cols="50" maxlength="500"
+                placeholder="Écrivez votre message ici..."></textarea>
 
-        <div class="ctn-input">
-            <label class="label" for="joindrePrenom">Prénom</label>
-            <input
-                type="text"
-                id="joindrePrenom"
-                name=""
-                placeholder=""
-                aria-labelledby=""
-                aria-required="true"
-                aria-invalid="false"
-                aria-describedby=""
-                value=""
-                class="input" />
         </div>
-
     </div>
 
 </form>
