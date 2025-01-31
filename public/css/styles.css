@@ -313,6 +313,7 @@ p {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin-bottom: 16px;
 }
 
 .radio-prof {
@@ -327,7 +328,7 @@ p {
   font-size: 16px;
   color: #CAC6DD;
   padding: 16px 8px 16px 8px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 input:focus {
@@ -337,7 +338,7 @@ input:focus {
 .ctn-checkbox {
   width: fit-content;
   display: Flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 8px;
   color: #CAC6DD;
   font-size: 16px;
@@ -355,6 +356,12 @@ input:focus {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.inputLabelConsentement {
+  display: Flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
 .ctn-input label {
   margin-bottom: 8px;
 }
@@ -366,6 +373,10 @@ textarea {
 
 .btnFormulaire {
   margin: 32px 0;
+}
+
+.error {
+  color: #FF4E4E !important;
 }
 
 /** Header **/

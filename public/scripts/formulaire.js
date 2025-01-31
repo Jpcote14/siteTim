@@ -1,4 +1,4 @@
-const radios = document.querySelectorAll('input[name="responsableSelectionne"]');
+const radios = document.querySelectorAll('input[name="responsable_id"]');
 
 const h2 = document.getElementById("choixResponsable");
 
@@ -15,4 +15,4 @@ radios.forEach((radio) => {
 });
 
 // Si un radio est déjà sélectionné au chargement de la page, met à jour le h2 en conséquence
-document.querySelector('input[name="responsableSelectionne"]:checked')?.dispatchEvent(new Event("change"));
+document.querySelector('input[name="responsable_id"]:checked')?.dispatchEvent(new Event("change"));

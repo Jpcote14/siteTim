@@ -137,6 +137,9 @@ class App
                 case 'creer':
                     $objControleur->creer();
                     break;
+                case 'inserer':
+                    $objControleur->inserer();
+                    break;
                 default:
                     echo 'Erreur 404 - Action invalide';
             }

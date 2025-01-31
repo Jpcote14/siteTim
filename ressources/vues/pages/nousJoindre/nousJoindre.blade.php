@@ -5,12 +5,13 @@ Nous joindre
 @endsection
 
 @section('contenu')
+
 <div class="ctn-intro-page">
     <h1 class="h1">Nous joindre</h1>
     <p class="">Pour toute question ou information, contactez-nous par courriel ou par téléphone – notre équipe se fera un plaisir de vous répondre rapidement !</p>
 </div>
+<form class="ctn-formulaire" action="index.php?controleur=messages&action=inserer" method="post">
 
-<form class="ctn-formulaire" action="#" method="post">
 
     <div class="ctn-droite">
         <div class="ctn-nos-responsables">
@@ -22,7 +23,7 @@ Nous joindre
             @foreach($responsables as $responsable)
             <label for="responsable-{{$responsable->getId()}}" class="carte-prof">
                 <input class="radio-prof" type="radio" id="responsable-{{$responsable->getId()}}"
-                    name="responsableSelectionne" value="{{$responsable->getId()}}"
+                    name="responsable_id" value="{{$responsable->getId()}}"
                     @if($loop->first) checked @endif>
 
                 <div class="info-prof">
@@ -49,11 +50,11 @@ Nous joindre
         <h2 id="choixResponsable" class="h2 h2-contact">Joindre Sylvain Lamoureux</h2>
 
         <div class="ctn-input">
-            <label class="label" for="nomPrenom">Nom complet</label>
+            <label class="label" for="prenom_nom">Nom complet</label>
             <input
                 type="text"
-                id="nomPrenom"
-                name="nomPrenom"
+                id="prenom_nom"
+                name="prenom_nom"
                 placeholder="Jean-Philippe Côté"
                 aria-labelledby=""
                 aria-required="true"
@@ -98,16 +99,16 @@ Nous joindre
             <div id="ctnCheckbox" class="ctn-checkbox">
                 <input
                     type="checkbox"
-                    id="checkboxAutorisation"
-                    name="checkboxAutorisation"
+                    id="consentement"
+                    name="consentement"
                     placeholder="418-659-6600"
                     aria-labelledby=""
                     aria-required="true"
                     aria-invalid="false"
                     aria-describedby=""
-                    value=""
+                    value="1"
                     class="" />
-                <label class="" for="checkboxAutorisation">J'autorise l'utilisation de mon numéro de téléphone.</label>
+                <label class="" for="consentement">J'autorise l'utilisation de mon numéro de téléphone.</label>
 
             </div>
         </div>
