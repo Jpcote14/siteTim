@@ -38,6 +38,6 @@
  <a class="onglet" href="index.php?controleur=stages&action=index">Stages</a>
  <a class="onglet" href="index.php?controleur=messages&action=creer">Nous joindre</a>
  </div>
- <button class="btn">S'inscrire</button>
+ <button type="button" class="btn">S'inscrire</button>
  </nav>
 </header>

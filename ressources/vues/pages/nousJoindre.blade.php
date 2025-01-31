@@ -15,18 +15,16 @@ Nous joindre
     <div class="ctn-droite">
         <div class="ctn-nos-responsables">
             <h2 class="h2">Nos responsables</h2>
-            <p>Choisi avec qui tu souhaite communiquer parmis nos 4 professeurs responsable du programme.</p>
+            <p>Choisissez avec qui vous souhaitez communiquer parmi nos quatre professeurs responsables du programme.</p>
         </div>
 
         <div class="ctn-carte-prof">
             @foreach($responsables as $responsable)
             <label for="responsable-{{$responsable->getId()}}" class="carte-prof">
-                <!-- Bouton radio caché -->
                 <input class="radio-prof" type="radio" id="responsable-{{$responsable->getId()}}"
                     name="responsableSelectionne" value="{{$responsable->getId()}}"
                     @if($loop->first) checked @endif>
 
-                <!-- Contenu de la carte -->
                 <div class="info-prof">
                     <img class="img-prof" src="{{$responsable->getCheminImage()}}"
                         alt="Photo de {{$responsable->getPrenom()}} {{$responsable->getNom()}}">
@@ -71,7 +69,7 @@ Nous joindre
                 type="text"
                 id="courriel"
                 name="courriel"
-                placeholder=""
+                placeholder="jean-philippe_Cote@csfoy.ca"
                 aria-labelledby=""
                 aria-required="true"
                 aria-invalid="false"
@@ -80,8 +78,42 @@ Nous joindre
                 class="input" />
         </div>
 
+        <!-- A faire apparaitre que si benoit est selected -->
+        <div id="ctnBenoit">
+            <div id="ctnTelephone" class="ctn-input">
+                <label class="label" for="telephone">Téléphone</label>
+                <input
+                    type="telephone"
+                    id="telephone"
+                    name="telephone"
+                    placeholder="418-659-6600"
+                    aria-labelledby=""
+                    aria-required="true"
+                    aria-invalid="false"
+                    aria-describedby=""
+                    value=""
+                    class="input" />
+            </div>
+
+            <div id="ctnCheckbox" class="ctn-checkbox">
+                <input
+                    type="checkbox"
+                    id="checkboxAutorisation"
+                    name="checkboxAutorisation"
+                    placeholder="418-659-6600"
+                    aria-labelledby=""
+                    aria-required="true"
+                    aria-invalid="false"
+                    aria-describedby=""
+                    value=""
+                    class="" />
+                <label class="" for="checkboxAutorisation">J'autorise l'utilisation de mon numéro de téléphone.</label>
+
+            </div>
+        </div>
+
         <div class="ctn-input">
-            <label class="label" for="sujet">Prénom</label>
+            <label class="label" for="sujet">Objet</label>
             <input
                 type="text"
                 id="sujet"
@@ -97,10 +129,13 @@ Nous joindre
 
         <div class="ctn-input">
             <label class="label" for="message">Message</label>
-            <textarea id="message" name="message" rows="10" cols="50" maxlength="500"
+            <textarea class="input" id="message" name="message" rows="10" cols="50" maxlength="500"
                 placeholder="Écrivez votre message ici..."></textarea>
-
         </div>
+
+        <!-- manque le recapcha -->
+        <button type="submit" class="btn btnFormulaire">S'inscrire</button>
+
     </div>
 
 </form>
