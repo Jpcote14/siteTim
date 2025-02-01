@@ -12,7 +12,7 @@ class Message
     private int $id = 0;
     private string $prenom_nom = "";
     private string $courriel = "";
-    private string $telephone = "";
+    private ?string $telephone = null;
     private bool $consentement = false;
     private string $sujet = "";
     private string $contenu = "";
@@ -45,19 +45,25 @@ class Message
     public function inserer(): void
     {
         $sql = "INSERT INTO messages (prenom_nom, courriel, telephone, consentement, sujet, contenu, responsable_id)
-                VALUES (:prenom_nom, :courriel, :telephone, :consentement, :sujet, :contenu, :responsable_id)";
+            VALUES (:prenom_nom, :courriel, :telephone, :consentement, :sujet, :contenu, :responsable_id)";
 
         $requetePreparee = APP::getPDO()->prepare($sql);
+
         $requetePreparee->bindParam(':prenom_nom', $this->prenom_nom, PDO::PARAM_STR);
         $requetePreparee->bindParam(':courriel', $this->courriel, PDO::PARAM_STR);
-        $requetePreparee->bindParam(':telephone', $this->telephone, PDO::PARAM_STR);
-        $requetePreparee->bindValue(':consentement', (int) $this->consentement, PDO::PARAM_INT);
+
+        $requetePreparee->bindValue(':telephone', !empty($this->telephone) ? $this->telephone : null, PDO::PARAM_STR);
+
+        $requetePreparee->bindValue(':consentement', $this->consentement ? 1 : 0, PDO::PARAM_INT);
+
         $requetePreparee->bindParam(':sujet', $this->sujet, PDO::PARAM_STR);
         $requetePreparee->bindParam(':contenu', $this->contenu, PDO::PARAM_STR);
         $requetePreparee->bindParam(':responsable_id', $this->responsable_id, PDO::PARAM_INT);
 
         $requetePreparee->execute();
     }
+
+
 
 
 

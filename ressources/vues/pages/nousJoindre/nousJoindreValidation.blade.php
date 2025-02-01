@@ -90,8 +90,7 @@ Nous joindre
             @endif
         </div>
 
-        <!-- A faire apparaitre que si benoit est selected -->
-        <div id="ctnBenoit">
+        <div id="ctnBenoit" class="hidden">
             <div id="ctnTelephone" class="ctn-input">
                 <label class="label" for="telephone">Téléphone</label>
                 <input

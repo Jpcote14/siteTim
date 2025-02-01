@@ -342,24 +342,24 @@ input:focus {
   gap: 8px;
   color: #CAC6DD;
   font-size: 16px;
-  padding: 8px 2px;
   margin: 8px 0 24px 0;
-  border-radius: 12px;
-}
-
-@media (min-width: 768px) {
-  .ctn-checkbox {
-    padding: 8px 16px;
-  }
-}
-.ctn-checkbox:hover {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .inputLabelConsentement {
   display: Flex;
   flex-direction: row;
   gap: 8px;
+  padding: 8px 8px;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .inputLabelConsentement {
+    padding: 8px 16px;
+  }
+}
+.inputLabelConsentement:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .ctn-input label {
@@ -616,6 +616,10 @@ main {
     padding-right: 220px;
   }
 }
+.hidden {
+  display: none;
+}
+
 .btn {
   position: relative;
   display: inline-block;

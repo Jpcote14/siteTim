@@ -80,7 +80,7 @@ Nous joindre
         </div>
 
         <!-- A faire apparaitre que si benoit est selected -->
-        <div id="ctnBenoit">
+        <div id="ctnBenoit" class="hidden">
             <div id="ctnTelephone" class="ctn-input">
                 <label class="label" for="telephone">Téléphone</label>
                 <input
@@ -97,19 +97,20 @@ Nous joindre
             </div>
 
             <div id="ctnCheckbox" class="ctn-checkbox">
-                <input
-                    type="checkbox"
-                    id="consentement"
-                    name="consentement"
-                    placeholder="418-659-6600"
-                    aria-labelledby=""
-                    aria-required="true"
-                    aria-invalid="false"
-                    aria-describedby=""
-                    value="1"
-                    class="" />
-                <label class="" for="consentement">J'autorise l'utilisation de mon numéro de téléphone.</label>
-
+                <div class="inputLabelConsentement">
+                    <input
+                        type="checkbox"
+                        id="consentement"
+                        name="consentement"
+                        placeholder="418-659-6600"
+                        aria-labelledby=""
+                        aria-required="true"
+                        aria-invalid="false"
+                        aria-describedby=""
+                        value="1"
+                        class="" />
+                    <label class="" for="consentement">J'autorise l'utilisation de mon numéro de téléphone.</label>
+                </div>
             </div>
         </div>
 
